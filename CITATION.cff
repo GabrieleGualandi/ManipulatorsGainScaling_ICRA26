@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "Code for: <PAPER_TITLE_PLACEHOLDER>"
+message: "If you use this software, please cite the associated paper."
+type: software
+
+authors:
+  - family-names: "<AUTHOR1_FAMILY_NAME_PLACEHOLDER>"
+    given-names: "<AUTHOR1_GIVEN_NAME_PLACEHOLDER>"
+    affiliation: "<AUTHOR1_AFFILIATION_PLACEHOLDER>"
+  - family-names: "<AUTHOR2_FAMILY_NAME_PLACEHOLDER>"
+    given-names: "<AUTHOR2_GIVEN_NAME_PLACEHOLDER>"
+    affiliation: "<AUTHOR2_AFFILIATION_PLACEHOLDER>"
+
+repository-code: "https://github.com/<GITHUB_USER_PLACEHOLDER>/<REPOSITORY_NAME_PLACEHOLDER>"
+license: "Apache-2.0"
+version: "<SOFTWARE_VERSION_PLACEHOLDER>"
+date-released: "<DATE_YYYY-MM-DD_PLACEHOLDER>"
+
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "<AUTHOR1_FAMILY_NAME_PLACEHOLDER>"
+      given-names: "<AUTHOR1_GIVEN_NAME_PLACEHOLDER>"
+    - family-names: "<AUTHOR2_FAMILY_NAME_PLACEHOLDER>"
+      given-names: "<AUTHOR2_GIVEN_NAME_PLACEHOLDER>"
+  title: "<PAPER_TITLE_PLACEHOLDER>"
+  journal: "<CONFERENCE_OR_PROCEEDINGS_PLACEHOLDER>"
+  year: "<YEAR_PLACEHOLDER>"
+  doi: "<DOI_PLACEHOLDER>"
+  url: "<PAPER_URL_PLACEHOLDER>"
