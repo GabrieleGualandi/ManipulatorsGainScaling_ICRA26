@@ -1,30 +1,27 @@
 cff-version: 1.2.0
-title: "Code for: <PAPER_TITLE_PLACEHOLDER>"
-message: "If you use this software, please cite the associated paper."
+title: "Code for: From Passive Monitoring to Active Defense: Resilient Control of Manipulators Under Cyberattacks"
+message: "If you use any part of this software, please cite the associated paper."
 type: software
 
 authors:
-  - family-names: "<AUTHOR1_FAMILY_NAME_PLACEHOLDER>"
-    given-names: "<AUTHOR1_GIVEN_NAME_PLACEHOLDER>"
-    affiliation: "<AUTHOR1_AFFILIATION_PLACEHOLDER>"
-  - family-names: "<AUTHOR2_FAMILY_NAME_PLACEHOLDER>"
-    given-names: "<AUTHOR2_GIVEN_NAME_PLACEHOLDER>"
-    affiliation: "<AUTHOR2_AFFILIATION_PLACEHOLDER>"
+  - family-names: Gualandi
+    given-names: Gabriele
+    affiliation: Mälardalen University
 
-repository-code: "https://github.com/<GITHUB_USER_PLACEHOLDER>/<REPOSITORY_NAME_PLACEHOLDER>"
+repository-code: "https://github.com/GabrieleGualandi/ManipulatorsGainScaling_ICRA26.git"
 license: "Apache-2.0"
-version: "<SOFTWARE_VERSION_PLACEHOLDER>"
-date-released: "<DATE_YYYY-MM-DD_PLACEHOLDER>"
+version: "1.0.0"
+date-released: "28/02/2026"
 
 preferred-citation:
-  type: article
+  type: conference-paper
   authors:
-    - family-names: "<AUTHOR1_FAMILY_NAME_PLACEHOLDER>"
-      given-names: "<AUTHOR1_GIVEN_NAME_PLACEHOLDER>"
-    - family-names: "<AUTHOR2_FAMILY_NAME_PLACEHOLDER>"
-      given-names: "<AUTHOR2_GIVEN_NAME_PLACEHOLDER>"
-  title: "<PAPER_TITLE_PLACEHOLDER>"
-  journal: "<CONFERENCE_OR_PROCEEDINGS_PLACEHOLDER>"
-  year: "<YEAR_PLACEHOLDER>"
-  doi: "<DOI_PLACEHOLDER>"
-  url: "<PAPER_URL_PLACEHOLDER>"
+    - family-names: "Gualandi"
+      given-names: "Gabriele"
+    - family-names: "Papadopoulos"
+      given-names: "Alessandro V."
+  title: "From Passive Monitoring to Active Defense: Resilient Control of Manipulators Under Cyberattacks"
+  collection-title: "Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)"
+  year: 2026
+  doi: ""
+  url: ""

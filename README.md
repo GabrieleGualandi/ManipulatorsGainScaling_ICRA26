@@ -1,9 +1,13 @@
 # Active Defence for Robotic Manipulators
 
-This repository contains the reference implementation associated with the paper (ICRA 2026):
+This repository accompanies the paper: 
 
 > **"From Passive Monitoring to Active Defense: Resilient Control of Manipulators Under Cyberattacks"**
 > *Gabriele Gualandi and Alessandro V. Papadopoulos*
+
+accepted at IEEE International Conference on Robotics and Automation (ICRA), 2026.
+
+The final publication DOI will be added once available (see file: NOTICE).
 
 This code implements the active defense framework and generates the simulation results presented in the paper.
 
@@ -61,7 +65,7 @@ If you use this code in academic work, please cite the associated paper.
 
 ### BibTeX
 ```bibtex
-% Citation placeholder (Update when published)
+% Citation placeholder (Updated when published)
 @inproceedings{Gualandi2026ActiveDefense,
   title     = {From Passive Monitoring to Active Defense: Resilient Control of Manipulators Under Cyberattacks},
   author    = {Gualandi, Gabriele and Papadopoulos, Alessandro V.},
