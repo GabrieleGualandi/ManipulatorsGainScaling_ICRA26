@@ -1,2 +1,4 @@
-/results/
+/results/**
+!/results/**/
+!/results/**/.gitkeep
 .DS_Store
