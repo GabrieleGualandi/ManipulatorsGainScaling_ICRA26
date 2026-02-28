@@ -8,7 +8,7 @@
 % addpath('/Library/gurobi1203/macos_universal2/matlab')
 
 clc; clear; close all;
-% Add all subfolders to the MATLAB path, excluding those containing '_old'
+% Add all subfolders to the MATLAB path
 addpath(genpath(pwd));
 
 %% 1. Configuration

@@ -8,11 +8,19 @@ This repository contains the reference implementation associated with the paper 
 This code implements the active defense framework and generates the simulation results presented in the paper.
 
 ## 0. Prerequisites — Gurobi Solver
-Gurobi must be installed and visible in the MATLAB path for the execution of the Active Defence and GreedyPD attacker algorithms. Follow these steps to ensure Gurobi is set up correctly:
+Gurobi must be installed and visible in the MATLAB path for the execution of the Active Defence and GreedyPD attacker algorithms. The code has been tested with **MATLAB 2025b** and **Gurobi 12.03**. 
+
+> [NOTE]
+> As of 2026, Gurobi offers free licenses for academic use.
+> Researchers and students can obtain these licenses at
+> [https://www.gurobi.com/academia/academic-program-and-licenses/](https://www.gurobi.com/academia/academic-program-and-licenses/).
+
+Follow these steps to ensure Gurobi is set up correctly:
 
 1. Install Gurobi and MATLAB interface.
 2. Add Gurobi to your MATLAB path (e.g., `addpath('/Library/gurobi1203/macos_universal2/matlab')`).
-3. If you wish to use a different solver, the optimization problem is formulated in standard form. You must modify the following function to integrate your solver:
+
+If you wish to use a different solver, the optimization problem is formulated in standard form. You must modify the following function to integrate your solver:
    `core/+optim/+gurobi/solveQCQP.m`
 
 ## 1. Workflow & Configuration
