@@ -1,4 +1,7 @@
 function [x, status, final_A] = robustInverseSolve(A, b, method, options)
+% SPDX-License-Identifier: Apache-2.0
+% Copyright (c) 2026 Gabriele Gualandi
+%
 %ROBUSTINVERSESOLVE Solves A*x = b robustly, especially for ill-conditioned A.
 %
 %   [x, status, final_A] = robustInverseSolve(A, b, method, options)
