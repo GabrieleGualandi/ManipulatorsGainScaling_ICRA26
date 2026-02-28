@@ -11,13 +11,22 @@ The final publication DOI will be added once available (see file: NOTICE).
 
 This code implements the active defense framework and generates the simulation results presented in the paper.
 
+## Citation
+If you use this code in academic work, please cite the associated paper.
+
+### BibTeX
+```bibtex
+% Citation placeholder (Updated when published)
+@inproceedings{Gualandi2026ActiveDefense,
+  title     = {From Passive Monitoring to Active Defense: Resilient Control of Manipulators Under Cyberattacks},
+  author    = {Gualandi, Gabriele and Papadopoulos, Alessandro V.},
+  booktitle = {Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+  year      = {2026}
+}
+```
+
 ## 0. Prerequisites — Gurobi Solver
 Gurobi must be installed and visible in the MATLAB path for the execution of the Active Defence and GreedyPD attacker algorithms. The code has been tested with **MATLAB 2025b** and **Gurobi 12.03**. 
-
-> [NOTE]
-> As of 2026, Gurobi offers free licenses for academic use.
-> Researchers and students can obtain these licenses at
-> [https://www.gurobi.com/academia/academic-program-and-licenses/](https://www.gurobi.com/academia/academic-program-and-licenses/).
 
 Follow these steps to ensure Gurobi is set up correctly:
 
@@ -26,6 +35,11 @@ Follow these steps to ensure Gurobi is set up correctly:
 
 If you wish to use a different solver, the optimization problem is formulated in standard form. You must modify the following function to integrate your solver:
    `core/+optim/+gurobi/solveQCQP.m`
+
+> [NOTE]
+> As of 2026, Gurobi offers free licenses for academic use.
+> Researchers and students can obtain these licenses at
+> [https://www.gurobi.com/academia/academic-program-and-licenses/](https://www.gurobi.com/academia/academic-program-and-licenses/).
 
 ## 1. Workflow & Configuration
 In this streamlined project structure, the configurations for the simulations are stored directly as `.mat` files, rather than configuring them dynamically.
@@ -59,20 +73,6 @@ The script `main.m` orchestrates the entire pipeline: it loops over all the simu
 
 ## License
 This repository is released under the **Apache License 2.0**. See the `LICENSE` file for details.
-
-## Citation
-If you use this code in academic work, please cite the associated paper.
-
-### BibTeX
-```bibtex
-% Citation placeholder (Updated when published)
-@inproceedings{Gualandi2026ActiveDefense,
-  title     = {From Passive Monitoring to Active Defense: Resilient Control of Manipulators Under Cyberattacks},
-  author    = {Gualandi, Gabriele and Papadopoulos, Alessandro V.},
-  booktitle = {Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
-  year      = {2026}
-}
-```
 
 ## Disclaimer
 This code is provided for research and educational purposes and is released as-is, without warranties or guarantees of any kind. 
