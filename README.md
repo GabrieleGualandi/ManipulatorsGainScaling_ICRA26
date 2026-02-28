@@ -51,9 +51,8 @@ In this streamlined project structure, the configurations for the simulations ar
 ## 2. Running the Pipeline
 The script `main.m` orchestrates the entire pipeline: it loops over all the simulations defined in `params/`, runs the physics kernel (`coreSimulator`), computes post-processing metrics, exports the results structurally, and finally triggers the plot generation module.
 
-1. **Add a new simulation:** Drop the pre-generated `<simID>.mat` into `params/ICRA26/`
-2. **Run one simulation:** Execute `main_singleSimulation.m`
-3. **Run all & plot results:** Execute `main.m`
+1. **Run one simulation:** Execute `main_singleSimulation.m`
+2. **Run all & plot results:** Execute `main.m`
 
 ## 3. Folder Map
 ```text
