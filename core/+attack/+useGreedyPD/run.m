@@ -30,25 +30,6 @@ function [yAttack, st, info] = run(par, st, t, tStart, Nsteps, isSimulation, yAt
     nJoints = par.robot.nJoints;
 
     if isSimulation
-        % In simulation (lookahead), we just read the pre-set attack value
-        % Note: logic copied from original core_attack, but usually overrides are handled outside?
-        % In original core_attack: if isSimulation ... yAttack = override/par.attack.value
-        % Here we assume core_attack handles the override dispatch or we replicate it?
-        % The user said core_attack should be a "dispatcher".
-        % The simulation logic (reading pre-computed values) acts as an "override" or "replay" 
-        % rather than the "GreedyPD" strategy itself.
-        % However, if we are in this plugin, it means we are "running" GreedyPD.
-        % But wait, if isSimulation is true, core_attack originally returned early.
-        % The dispatcher should probably handle the isSimulation check if it applies to ALL attacks.
-        % BUT, coreSimulator passes attackValueOverride to core_attack.
-        
-        % Let's look at the original code. 
-        % if isSimulation ... yAttack = override ... return.
-        % This logic bypasses the specific attack computation.
-        % So it arguably belongs in the dispatcher (core_attack), OR this plugin shouldn't be called if isSimulation?
-        % Actually, if isSimulation, we might simply NOT call the constructive plugins.
-        % I will rely on core_attack to handle the `isSimulation` override shortcut as it seems global.
-        % So `run` here will assume we are calculating the attack.
         return; 
     end
     
@@ -137,12 +118,6 @@ function [yAttack, st, info] = run(par, st, t, tStart, Nsteps, isSimulation, yAt
         if any(isnan(yAttackInc)); error('NAN attack!'); end
         st.y_prev_total_attack = yAttackInc;
         
-        % Combine with input yAttack (assuming greedy attack replaces or adds? 
-        % Original code: `yAttack = st.y_prev_total_attack + delta_y_optimal` (which is stored in st.y_prev...)
-        % `yAttack` output of core_attack is this value.
-        % If multiple attacks run, how do they combine?
-        % Usually GreedyPD drives the total attack vector.
-        % We'll assume it sets the baseline `yAttack`.
         yAttack = yAttack + yAttackInc; 
 
         % Populate Info

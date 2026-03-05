@@ -278,4 +278,4 @@ switch lower(method)
 
 end % End switch statement
 
-end % End function
+end 

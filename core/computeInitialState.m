@@ -55,8 +55,7 @@ function [s, info] = computeInitialState(par)
     s.current_Pz        = par.def.scheme.propagator.Pz0;
     info.current_Pz     = "Current projected state covariance matrix";
 
-    %% --- Gain Scaling smoother: needed by PDScaling or ActiveDissipation ---
-    % sys_gainScaling_q drives gamma in activeDissipation and scales ddot_q in PDScaling.
+    %% --- Gain Scaling smoother: needed by PDScaling
 
     if usePDgainsScaling || useActiveDissipation
         s.sys_gainScaling_q         = 1; % Start at full gain (not 0)
@@ -67,9 +66,7 @@ function [s, info] = computeInitialState(par)
         info.target_gainScaling     = "Target gain for Gain Scaling smoother";
     end
 
-
-
-    %% --- ActiveDissipation: smooth damping state ---
+    % --- ActiveDissipation: smooth damping state
 
     if useActiveDissipation
         s.sys_smootDamp_q       = zeros(par.robot.nJoints, 1);

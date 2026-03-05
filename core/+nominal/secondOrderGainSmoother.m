@@ -50,14 +50,13 @@ function sysOut = secondOrderGainSmoother(params, q0, qdot0, Ts, nComp)
 %   See also: ss, stepinfo, plantMassSpringDamp,
 %             secondOrderLinearSimulator
 %
-%   ---------------------------------------------------------------------
 
-    % ----- Defaults -----------------------------------------------------
+    % ----- Defaults 
     if nargin < 5 || isempty(nComp)
         nComp = 1;
     end
 
-    % ----- Build single-channel continuous & discrete model ------------
+    % ----- Build single-channel continuous & discrete model 
     gaintracker = struct();
     gaintracker.sys.meta = params;
     gaintracker = plantMassSpringDamp(gaintracker);
@@ -72,7 +71,7 @@ function sysOut = secondOrderGainSmoother(params, q0, qdot0, Ts, nComp)
     staticGain = gaintracker.sys.info.cont.staticGain;
     B1 = B1 * (1/staticGain);      % still 2x1
 
-    % ----- Replicate to nComp independent channels ---------------------
+    % ----- Replicate to nComp independent channels
     % State dimension per channel = 2 (q, qdot).
     % Total state dimension        = 2*nComp.
     %
@@ -87,7 +86,7 @@ function sysOut = secondOrderGainSmoother(params, q0, qdot0, Ts, nComp)
     C_big = kron(I_n, C1);
     D_big = kron(I_n, D1);
 
-    % ----- Initial conditions ------------------------------------------
+    % ----- Initial conditions 
     % q0, qdot0 must be nComp-by-1 vectors. If scalars are provided,
     % replicate them.
     if isscalar(q0)
@@ -108,14 +107,14 @@ function sysOut = secondOrderGainSmoother(params, q0, qdot0, Ts, nComp)
         end
     end
 
-    % ----- Build simulator object --------------------------------------
+    % ----- Build simulator object 
     % Assumption: secondOrderLinearSimulator accepts vector ICs for q and qdot
     % and constructs the stacked state x0 = [q0_vec; qdot0_vec].
     sysOut = defence.secondOrderLinearSimulator( ...
         A_big, B_big, C_big, D_big, ...
         q0_vec, qdot0_vec);
 
-    % ----- Informative settling-time report (single-channel dynamics) ---
+    % ----- Informative settling-time report (single-channel dynamics)
     % We report the settling time of a single channel, since all channels
     % are identical copies.
     sysSingle = ss(A1, B1, C1, D1, Ts);

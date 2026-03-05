@@ -17,12 +17,12 @@ function [ddot_q_control, st] = PDScaling(par, st, ddot_q_control, zProj)
 %   ddot_q_control - Scaled control acceleration.
 %   st             - Updated SimulatorState object (target_gainScaling populated).
 %
-% SEE ALSO: DEFENCE.UNIFIEDDECREASING, CORE_CONTROL
+% SEE ALSO: DEFENCE.COMMANDSCALING, CORE_CONTROL
 
 
     % Apply scaling
     ddot_q_control = st.sys_gainScaling_q * ddot_q_control;
     
     % Update target for next step
-    [st.target_gainScaling] = defence.unifiedDecreasing(zProj, par.def.active.PDgainScaling, 'pin', 'exponential');
+    [st.target_gainScaling] = defence.commandScaling(zProj, par.def.active.PDgainScaling, 'pin', 'exponential');
 end

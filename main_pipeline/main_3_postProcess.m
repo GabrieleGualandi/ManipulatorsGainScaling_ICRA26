@@ -105,15 +105,12 @@ function simulation = main_3_postProcess(simulation)
 
     %% 10. Joint Frame Positions Over Time
     % Reconstruct the [x,y] position of each joint frame at every timestep.
-    % Produces fields frameNPos (2 x Nsteps) in simulation.log, matching the
-    % naming convention expected by the robot-trajectory LaTeX image.
     if isfield(par, 'funcs') && isfield(par.funcs, 'HT_funcs') && ~isempty(par.funcs.HT_funcs)
         framesPos = jointFramesOverTime(simulation.log.sys_real_q, par.funcs.HT_funcs, par.task.taskP);
         for nn = 1:numel(framesPos)
             simulation.log.(['frame', num2str(nn), 'Pos']) = framesPos{nn};
         end
     end
-
 
     % Standard plotting variables
     simulation.log.time = (0 : size(simulation.log.sys_real_q, 2) - 1) * par.sim.Ts;

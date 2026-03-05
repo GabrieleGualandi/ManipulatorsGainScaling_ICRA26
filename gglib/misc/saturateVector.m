@@ -1,4 +1,5 @@
 function [v_sat, hasSaturated, saturExcess] = saturateVector(v, maxNorm, normType, sharpness, epsMargin)
+%Gabriele Gualandi 2024
 %SATURATEVECTOR Saturate a vector under (possibly anisotropic) magnitude limits.
 %
 %   [v_sat, hasSaturated, saturExcess] = saturateVector(v, maxNorm)

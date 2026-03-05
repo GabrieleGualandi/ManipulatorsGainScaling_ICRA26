@@ -95,7 +95,6 @@ function [st, log] = core_init(par, stIn, Nsteps, self)
         
         % Preallocate error fields
         % Note: Dimensions depend on task space size. 
-        % numel(par.task.taskP) + numel(par.task.taskO (max 3?))
         nPos = numel(par.task.taskP);
         nOri = numel(par.task.taskO); % taskO contains indices, so numel is correct count
         nPoseError = nPos + nOri;

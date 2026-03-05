@@ -57,10 +57,6 @@ classdef SimulatorState < handle
             % Input:
             %   s - Struct produced by computeInitialState(par).
             %       Only contains fields for the currently active features.
-            %
-            % Because we iterate over s's fields, no change is needed here
-            % when features are added or removed — only computeInitialState
-            % needs updating.
 
             fields = fieldnames(s);
             for i = 1:numel(fields)
@@ -69,10 +65,7 @@ classdef SimulatorState < handle
         end
 
         function update(obj)
-            % UPDATE  Propagates st.next -> st (current) for each field in next.
-            %
-            % Only fields that were actually placed in obj.next are updated,
-            % so unused feature states are never touched.
+            % UPDATE  Propagates st.next -> st (current) for each field in next
 
             fields = fieldnames(obj.next);
             for i = 1:numel(fields)
@@ -83,9 +76,6 @@ classdef SimulatorState < handle
 
         function s = toStruct(obj)
             % TOSTRUCT  Exports all non-empty, non-internal properties as a struct.
-            %
-            % 'next' and 'ent' are intentionally excluded — they are
-            % transient containers, not part of the persistent state snapshot.
 
             excluded = {'next', 'ent'};
             s = struct();
@@ -100,8 +90,6 @@ classdef SimulatorState < handle
 
         function newObj = clone(obj)
             % CLONE  Creates a deep copy of the SimulatorState object.
-            %
-            % Usage: newState = st.clone();
 
             newObj = SimulatorState();
             newObj.initialize(obj.toStruct());

@@ -83,7 +83,6 @@ function [log] = coreSimulator(par, stIn, Nsteps, self)
         
         % 5b. Passive ADS (Constraints Check, Stealthiness)
         [ADS_z, ADS_r, hasAlarmFired] = defence.ADS_passive(par, st, y_tilde, isSimulation, hasAlarmFired);
-        
 
         
         %% 6. System Dynamics Propagation
@@ -93,9 +92,8 @@ function [log] = coreSimulator(par, stIn, Nsteps, self)
 
         %% 7. Data Logging
         % Record simulation data into the 'log' structure. 
-        % Logic:
-        % - Generally skipped for lookahead simulations (isSimulation=true) to save performance.
-        % - However, if computing Jacobian (isJacobian=true), we MUST log minimal data (e.g., hand pos/vel) 
+        % Generally skipped for lookahead simulations (isSimulation=true) to save performance.
+        % However, if computing Jacobian (isJacobian=true), we MUST log minimal data (e.g., hand pos/vel) 
         %   needed by the perturbation function (attack.perturbationG), even during lookahead.
         if ~isSimulation || isJacobian
             if isJacobian
